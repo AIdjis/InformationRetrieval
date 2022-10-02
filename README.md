@@ -14,6 +14,7 @@ git clone https://github.com/AIdjis/SouqPlace.git
    ```
 
 - Pre-Requisties installation
-```pip install -r requirements.txt
+```
+pip install -r requirements.txt
    ```
 
