@@ -1,11 +1,7 @@
 # InformationRetrieval
 
 ## requirments:
--python3.7
-
 -pip3
-
--virtualenv
 
 ## Getting Started:
 - pull the project using git
