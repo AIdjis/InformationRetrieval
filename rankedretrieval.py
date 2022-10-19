@@ -1,18 +1,14 @@
 import json
-import pandas as pd
 import math as mt
 
 class ScoreFuction:
 
     
-    def query_vectore(query):
-        with open('Inverted_Index.json', 'r') as openfile:
-            inverted_index=json.load(openfile)
-        id=pd.read_csv('preprossing.csv')['id'].values
+    def query_vectore(query,id_documents,inverted_index):
         query_vectore={}
         for term in query:
             try:
-                query_vectore[term]=(1+mt.log10(query.count(term)))*(mt.log10(len(id)/len(inverted_index[term])))
+                query_vectore[term]=(1+mt.log10(query.count(term)))*(mt.log10(len(id_documents)/len(inverted_index[term])))
             except:
                 continue
         return query_vectore

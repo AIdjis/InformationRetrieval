@@ -1,5 +1,5 @@
 import json
-import pandas as pd
+
 
 class BooleanSearch:
 
@@ -9,8 +9,7 @@ class BooleanSearch:
         else:
             return [ i for i in list2 if i  in list1 ]
 
-    def inverse(list1):
-        id_documents=pd.read_csv('preprossing.csv')['id'].values
+    def inverse(list1,id_documents):
         return [ i for i in id_documents if i not in list1 ]
         
     def union(list1,list2):
@@ -43,10 +42,11 @@ class ProximitySearch:
                 pos+=1
         return results
 
-    def proximity_list(word1,word2,size):
-        with open('inverted_index.json', 'r') as openfile:
-            inverted_index=json.load(openfile)
+    def proximity_list(word1,word2,size,inverted_index):
+        
+ 
         document_list=BooleanSearch.intersection(inverted_index[word1],inverted_index[word2])
+        
         with open('proximity_index.json', 'r') as openfile:
             proximity_index=json.load(openfile)
         return ProximitySearch.position(proximity_index[word1],proximity_index[word2],document_list,size)
