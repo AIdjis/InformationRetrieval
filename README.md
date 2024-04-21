@@ -2,6 +2,7 @@
 
 ## requirments:
 -pip3
+-python3
 
 ## Getting Started:
 - pull the project using git
