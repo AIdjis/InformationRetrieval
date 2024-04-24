@@ -15,4 +15,7 @@ git clone https://github.com/AIdjis/InformationRetrieval.git
 ```
 pip install -r requirements.txt
    ```
-
+- to run the project
+```
+python3 main.py
+   ```
